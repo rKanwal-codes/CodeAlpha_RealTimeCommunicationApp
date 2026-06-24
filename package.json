@@ -1,0 +1,21 @@
+{
+  "name": "codealpha-realtime-communication-app",
+  "version": "1.0.0",
+  "description": "CodeAlpha Internship Task 4 - Real-Time Communication App (Video Calling, Screen Sharing, File Sharing, Whiteboard, Encrypted Chat)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["webrtc", "socket.io", "video-call", "whiteboard", "screen-share"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3",
+    "jsonwebtoken": "^9.0.2",
+    "crypto-js": "^4.2.0"
+  }
+}

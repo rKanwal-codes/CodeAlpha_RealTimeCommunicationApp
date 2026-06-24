@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #0f1117;
+  color: #e6e6e6;
+}
+
+.screen { width: 100%; min-height: 100vh; }
+.hidden { display: none !important; }
+
+/* ---- Auth screen ---- */
+#authScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-box {
+  background: #181b24;
+  padding: 32px 36px;
+  border-radius: 14px;
+  width: 360px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.auth-box h1 { font-size: 20px; margin-bottom: 4px; }
+.subtitle { font-size: 12px; color: #9aa0ad; margin-bottom: 18px; }
+
+.tabs { display: flex; margin-bottom: 16px; border-radius: 8px; overflow: hidden; border: 1px solid #2a2f3a; }
+.tab {
+  flex: 1; padding: 8px; background: transparent; color: #9aa0ad; border: none; cursor: pointer;
+}
+.tab.active { background: #1f6feb; color: white; }
+
+#authForm input {
+  width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px;
+  border: 1px solid #2a2f3a; background: #0f1117; color: #fff;
+}
+#authForm button {
+  width: 100%; padding: 10px; border-radius: 8px; border: none;
+  background: #1f6feb; color: white; font-weight: 600; cursor: pointer;
+}
+#authForm button:hover { background: #1758c1; }
+.error { color: #ff6b6b; font-size: 13px; margin-top: 8px; min-height: 16px; }
+
+/* ---- App screen ---- */
+#appScreen { display: flex; flex-direction: column; height: 100vh; }
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px; background: #181b24; border-bottom: 1px solid #2a2f3a;
+}
+header h2 { font-size: 15px; margin: 0; }
+.controls button {
+  margin-left: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid #2a2f3a;
+  background: #20232e; color: #e6e6e6; cursor: pointer;
+}
+.controls button:hover { background: #2a2f3a; }
+#leaveBtn { background: #d23b3b; border-color: #d23b3b; }
+
+main { flex: 1; display: flex; overflow: hidden; }
+
+#videoSection { flex: 1; padding: 16px; overflow-y: auto; }
+#videoGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;
+}
+.video-tile {
+  position: relative; background: #000; border-radius: 10px; overflow: hidden; aspect-ratio: 4/3;
+}
+.video-tile video { width: 100%; height: 100%; object-fit: cover; }
+.video-tile .label {
+  position: absolute; bottom: 6px; left: 8px; font-size: 12px;
+  background: rgba(0,0,0,0.5); padding: 2px 8px; border-radius: 6px;
+}
+
+#sidePanel { width: 320px; background: #14161d; border-left: 1px solid #2a2f3a; display: flex; flex-direction: column; }
+.panel-tabs { display: flex; border-bottom: 1px solid #2a2f3a; }
+.panel-tab { flex: 1; padding: 10px; background: transparent; border: none; color: #9aa0ad; cursor: pointer; }
+.panel-tab.active { color: #fff; border-bottom: 2px solid #1f6feb; }
+
+.panel-content { display: none; flex-direction: column; flex: 1; padding: 10px; overflow: hidden; }
+.panel-content.active { display: flex; }
+
+#messages { flex: 1; overflow-y: auto; margin-bottom: 8px; font-size: 13px; }
+#messages .msg { margin-bottom: 8px; padding: 6px 10px; background: #20232e; border-radius: 8px; }
+#messages .msg .sender { font-weight: 600; color: #1f6feb; margin-right: 6px; }
+#messages .system { font-style: italic; color: #9aa0ad; font-size: 12px; text-align: center; }
+#messages .file-msg a { color: #4dd0e1; }
+
+.file-input-row { margin-bottom: 6px; }
+.chat-input-row { display: flex; gap: 6px; }
+.chat-input-row input {
+  flex: 1; padding: 8px; border-radius: 8px; border: 1px solid #2a2f3a; background: #0f1117; color: #fff;
+}
+.chat-input-row button {
+  padding: 8px 12px; border-radius: 8px; border: none; background: #1f6feb; color: white; cursor: pointer;
+}
+
+.wb-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.wb-toolbar button {
+  padding: 6px 10px; border-radius: 6px; border: none; background: #20232e; color: #e6e6e6; cursor: pointer;
+}
+#whiteboard { background: #fff; border-radius: 8px; cursor: crosshair; max-width: 100%; }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CodeAlpha | Real-Time Communication App</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== AUTH SCREEN ===== -->
+  <div id="authScreen" class="screen">
+    <div class="auth-box">
+      <h1>🔒 Real-Time Communication App</h1>
+      <p class="subtitle">Video Calls • Screen Share • Whiteboard • File Share — End-to-end encrypted chat</p>
+
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <form id="authForm">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="text" id="roomId" placeholder="Room ID (e.g. team-standup)" required />
+        <button type="submit" id="authSubmit">Login &amp; Join Room</button>
+      </form>
+      <p id="authError" class="error"></p>
+    </div>
+  </div>
+
+  <!-- ===== MAIN APP SCREEN ===== -->
+  <div id="appScreen" class="screen hidden">
+    <header>
+      <h2>Room: <span id="roomLabel"></span></h2>
+      <div class="controls">
+        <button id="toggleAudio">🎤 Mute</button>
+        <button id="toggleVideo">📷 Video Off</button>
+        <button id="toggleScreenShare">🖥️ Share Screen</button>
+        <button id="leaveBtn">🚪 Leave</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="videoSection">
+        <div id="videoGrid"></div>
+      </section>
+
+      <aside id="sidePanel">
+        <div class="panel-tabs">
+          <button class="panel-tab active" data-panel="chatPanel">💬 Chat</button>
+          <button class="panel-tab" data-panel="whiteboardPanel">🎨 Whiteboard</button>
+        </div>
+
+        <div id="chatPanel" class="panel-content active">
+          <div id="messages"></div>
+          <div class="file-input-row">
+            <input type="file" id="fileInput" />
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Type an encrypted message..." />
+            <button id="sendChatBtn">Send</button>
+          </div>
+        </div>
+
+        <div id="whiteboardPanel" class="panel-content">
+          <div class="wb-toolbar">
+            <input type="color" id="wbColor" value="#1f6feb" />
+            <input type="range" id="wbSize" min="1" max="20" value="3" />
+            <button id="wbClear">Clear</button>
+          </div>
+          <canvas id="whiteboard" width="500" height="400"></canvas>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
