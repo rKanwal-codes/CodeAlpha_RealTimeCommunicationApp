@@ -65,3 +65,8 @@ CodeAlpha_RealTimeCommunicationApp/
 - [ ] Push this code to a GitHub repo named `CodeAlpha_RealTimeCommunicationApp`
 - [ ] Record a short video walkthrough and post on LinkedIn, tagging @CodeAlpha
 - [ ] Submit via the official CodeAlpha submission form
+## 👩‍💻 Author
+
+**Rukhsana Kanwal**
+Computer Engineering Student
+CodeAlpha Full Stack Development Intern
